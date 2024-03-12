@@ -10,7 +10,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    double alturaTela = MediaQuery.of(context).size.height;
     double larguraTela = MediaQuery.of(context).size.width;
 
     return Scaffold(
@@ -28,48 +27,123 @@ class _HomePageState extends State<HomePage> {
                 "Nome do aplicativo",
                 style: TextStyle(fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
               ),
-            
               IconButton(
-                icon: const Icon(Icons.account_tree_rounded , size: 35,),
+                icon: const Icon(Icons.account_tree_rounded, size: 35),
                 onPressed: () {},
               ),
             ],
           ),
         ),
       ),
-      //
-      body:Row(
-          children: [
-            const Spacer(),
-            Expanded(
-              child: Container(
-                alignment: Alignment.centerLeft,
-                color: Colors.blue,
-                width: larguraTela / 2,
-                height: 150,
+
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          // Linha 1 (Texto à esquerda, Ícone à direita)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Contêiner da Esquerda (Texto com fundo azul)
+              Container(
+                width: larguraTela / 2, // Metade da largura da tela
+                color: Colors.blue, // Add blue background color
                 child: const Text(
-                  "Nome Aqui",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 50,
-                  ),
+                  "NOME AQUI 1",
+                  style: TextStyle(fontSize: 20, color: Colors.white), // White text for better visibility
                 ),
               ),
-            ),
-            const Spacer(),
-            Container(
-              alignment: Alignment.center,
-              width: larguraTela / 4,
-              height: 130,
-              child: const Icon(
-                Icons.home,
-                size: 70,
-                color: Color.fromARGB(255, 212, 6, 6),
+              // Contêiner da Direita (Ícone)
+              Container(
+                width: larguraTela / 4, // Um quarto da largura da tela
+                child: const Icon(Icons.home, size: 50),
               ),
-            ),
-          ],
-        ),
-      //
+            ],
+          ),
+
+          // Linha 2 (Ícone à esquerda, Texto à direita)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Contêiner da Esquerda (Ícone)
+              Container(
+                width: larguraTela / 2,
+                child: const Icon(Icons.settings, size: 50),
+              ),
+              // Contêiner da Direita (Texto com fundo azul)
+              Container(
+                width: larguraTela / 4,
+                color: Colors.blue, // Add blue background color
+                child: const Text(
+                  "NOME AQUI 2",
+                  style: TextStyle(fontSize: 20, color: Colors.white), // White text for better visibility
+                ),
+              ),
+            ],
+          ),
+
+          // Linhas adicionais (Texto à esquerda, Ícone à direita)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Contêiner da Esquerda (Texto com fundo azul)
+              Container(
+                width: larguraTela / 2,
+                color: Colors.blue, // Add blue background color
+                child: const Text(
+                  "NOME AQUI 3",
+                  style: TextStyle(fontSize: 20, color: Colors.white), // White text for better visibility
+                ),
+              ),
+              Container(
+                width: larguraTela / 4,
+                child: const Icon(Icons.search, size: 50),
+              ),
+            ],
+          ),
+
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Contêiner da Esquerda (Ícone)
+              Container(
+                width: larguraTela / 2,
+                child: const Icon(Icons.settings, size: 50),
+              ),
+              // Contêiner da Direita (Texto com fundo azul)
+              Container(
+                width: larguraTela / 4,
+                color: Colors.blue, // Add blue background color
+                child: const Text(
+                  "NOME AQUI 4",
+                  style: TextStyle(fontSize: 20, color: Colors.white), // White text for better visibility
+                ),
+              ),
+               SizedBox(width: 10),
+            ],
+          ),
+
+            Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              // Contêiner da Esquerda (Texto)
+              Container(
+                width: larguraTela / 2,
+                child: const Text(
+                  "Texto 5",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              // Contêiner da Direita (Ícone)
+              Container(
+                width: larguraTela / 4,
+                color: Colors.yellow, // Add yellow background color
+                child: const Icon(Icons.star, size: 50),
+              ),
+            ],
+          ),
+          // ... adicione mais linhas aqui seguindo o mesmo padrão
+        ],
+      ),
     );
   }
 }
